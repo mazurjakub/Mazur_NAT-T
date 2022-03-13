@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,60 +16,54 @@ namespace Mazur_NAT_T.Forms
             InitializeComponent();
         }
 
-        private void FormPortMapping_Load(object sender, EventArgs e)
-        {
-            AllocConsole();
-        }
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool AllocConsole();
-
 
         private async Task CreateMappingAsync()
         {
-            string mappingName = txtBoxPortName.Text,
+            string mappingName = txtBoxMappingName.Text,
                 extPortText = txtBoxExternalPort.Text,
                 intPortText = txtBoxInternalPort.Text;
 
-            // check if ports are numbers
-            if(!(int.TryParse(extPortText, out int extPort))){
+            // Check if ports are numbers and if they are in registered port range
+            if(!(int.TryParse(extPortText, out int extPort)) && extPort < 1024 && extPort > 49151){
                 MessageBox.Show("Neplatný externí port");
                 return;
             }
 
-            if(!(int.TryParse(intPortText, out int intPort)))
+            if(!(int.TryParse(intPortText, out int intPort)) && intPort < 1024 && intPort > 49151)
             {
                 MessageBox.Show("Neplatný interní port");
                 return;
             }
             try
             {
+                // Discover mappings
                 var discoverer = new NatDiscoverer();
 
-                // using SSDP protocol, it discovers NAT device.
+                // Using SSDP protocol to discover NAT device.
                 var device = await discoverer.DiscoverDeviceAsync();
 
-                // display the NAT's IP address
-                Console.WriteLine("Externí IP adresa je: {0} ", await device.GetExternalIPAsync());
+                // Create a new mapping in the router [NAT_device_IP:external_port -> host_machine_IP:internal_port].
+                var mapping = new Mapping(Protocol.Tcp, intPort, extPort, mappingName);
+                await device.CreatePortMapAsync(mapping);
 
-                // create a new mapping in the router [external_ip:extPort -> host_machine:intPort]
-                await device.CreatePortMapAsync(new Mapping(Protocol.Tcp, intPort, extPort, mappingName));
+                // Display created mapping
+                lblMapOutput.Text = "Vytvořeno mapování: " + await device.GetExternalIPAsync() + ":" + extPort
+                        + " -> " + mapping.PrivateIP + ":" + intPort;
 
-                // configure a TCP socket listening on intPort
+                // Configure a TCP socket to listen on internal port
                 var endPoint = new IPEndPoint(IPAddress.Any, intPort);
                 var socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 socket.SetIPProtectionLevel(IPProtectionLevel.Unrestricted);
                 socket.Bind(endPoint);
                 socket.Listen(4);
             }
-
+            // Catching if UPnP NAT device wasnt found
             catch (NatDeviceNotFoundException)
             {
                 MessageBox.Show("Nebylo nalezeno UPnP zařízení.");
             }
 
-            // catching mapping errors
+            // Catching mapping errors
             catch(MappingException me)
             {
                 switch (me.ErrorCode)
@@ -94,29 +82,90 @@ namespace Mazur_NAT_T.Forms
 
         private async Task ListMappings()
         {
-            var nat = new NatDiscoverer();
-
-            // we don't want to discover forever, just 5 senconds or less
-            var cts = new CancellationTokenSource(5000);
-
-            // we are only interested in Upnp NATs because PMP protocol doesn't allow to list mappings
-            var device = await nat.DiscoverDeviceAsync(PortMapper.Upnp, cts);
-
-            foreach (var mapping in await device.GetAllMappingsAsync())
+            try
             {
-                Console.WriteLine(mapping);
+                // Discover mappings
+                var nat = new NatDiscoverer();
+
+                // Stop discovering after 5 seconds
+                var cts = new CancellationTokenSource(5000);
+
+                // Discover UPnP NAT device
+                var device = await nat.DiscoverDeviceAsync(PortMapper.Upnp, cts);
+
+                lblMappings.Text = "";
+
+                // Write each mapping's information "mapping_name: NAT_device_IP:external_port -> host_machine_IP:internal_port"
+                foreach (var mapping in await device.GetAllMappingsAsync())
+                {
+                    lblMappings.Text += "  " + mapping.Description + ": " + await device.GetExternalIPAsync() + ":" + mapping.PublicPort + " -> "
+                        + mapping.PrivateIP + ":" + mapping.PrivatePort + "\n";
+                }
+            }
+            // Catching if UPnP NAT device wasnt found
+            catch (NatDeviceNotFoundException)
+            {
+                MessageBox.Show("Nebylo nalezeno UPnP zařízení.");
             }
         }
 
-        private void lblText_Click(object sender, EventArgs e)
+        // Delete mapping using name of the mapping
+        private async Task DeleteMapping()
         {
+            try
+            {
+                // Discover mappings
+                var nat = new NatDiscoverer();
 
+                // Stop discovering after 5 seconds
+                var cts = new CancellationTokenSource(5000);
+
+                // Discover UPnP NAT device
+                var device = await nat.DiscoverDeviceAsync(PortMapper.Upnp, cts);
+
+                string mappingName = txtBoxDeleteMappingName.Text;
+                lblDeleteOutput.Text = "";
+
+                // Compare each mapping name with given name, if they match, delete the mapping
+                foreach (var mapping in await device.GetAllMappingsAsync())
+                {
+                    if (mapping.Description.Contains(mappingName))
+                    {
+                        lblDeleteOutput.Text = "Odstraňuji: " + mappingName;
+                        lblDeleteOutput.Refresh();
+                        await device.DeletePortMapAsync(mapping);
+                    }
+                }
+
+                if (lblDeleteOutput.Text == "")
+                {
+                    lblDeleteOutput.Text = "Nenalezeno mapování s názvem: " + mappingName;
+                    lblDeleteOutput.Refresh();
+                }
+                await Task.Delay(2000);
+                lblDeleteOutput.Text = "";
+            }
+            // Catching if UPnP NAT device wasnt found
+            catch (NatDeviceNotFoundException)
+            {
+                MessageBox.Show("Nebylo nalezeno UPnP zařízení.");
+            }
         }
 
         private void btnMapping_Click(object sender, EventArgs e)
         {
             _ = CreateMappingAsync();
             
+        }
+
+        private void btnShowMappings_Click(object sender, EventArgs e)
+        {
+            _ = ListMappings();
+        }
+
+        private void btnDeleteMapping_Click(object sender, EventArgs e)
+        {
+            _ = DeleteMapping();
         }
     }
 }
