@@ -1,7 +1,7 @@
 ﻿
 namespace Mazur_NAT_T.Forms
 {
-    partial class FormTexty
+    partial class FormTextAndAnimation
     {
         /// <summary>
         /// Required designer variable.

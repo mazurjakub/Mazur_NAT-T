@@ -117,14 +117,114 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;btnEnd.Name" xml:space="preserve">
+    <value>btnEnd</value>
+  </data>
+  <data name="&gt;&gt;btnEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEnd.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnEnd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnText.Name" xml:space="preserve">
+    <value>btnText</value>
+  </data>
+  <data name="&gt;&gt;btnText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnText.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnPM.Name" xml:space="preserve">
+    <value>btnPM</value>
+  </data>
+  <data name="&gt;&gt;btnPM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPM.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnPM.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnHP.Name" xml:space="preserve">
+    <value>btnHP</value>
+  </data>
+  <data name="&gt;&gt;btnHP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHP.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnHP.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnNAT.Name" xml:space="preserve">
+    <value>btnNAT</value>
+  </data>
+  <data name="&gt;&gt;btnNAT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNAT.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnNAT.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panelTopLeftCorner.Name" xml:space="preserve">
+    <value>panelTopLeftCorner</value>
+  </data>
+  <data name="&gt;&gt;panelTopLeftCorner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTopLeftCorner.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelTopLeftCorner.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panelMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="panelMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="panelMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 803</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.Name" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="btnEnd.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="btnEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnEnd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
@@ -132,12 +232,14 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 409</value>
+    <value>0, 502</value>
+  </data>
+  <data name="btnEnd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 75</value>
+    <value>293, 92</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnEnd.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -172,10 +274,13 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 334</value>
+    <value>0, 410</value>
+  </data>
+  <data name="btnText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 75</value>
+    <value>293, 92</value>
   </data>
   <data name="btnText.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -211,10 +316,13 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnPM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 259</value>
+    <value>0, 318</value>
+  </data>
+  <data name="btnPM.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnPM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 75</value>
+    <value>293, 92</value>
   </data>
   <data name="btnPM.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -250,10 +358,13 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnHP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 184</value>
+    <value>0, 226</value>
+  </data>
+  <data name="btnHP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnHP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 75</value>
+    <value>293, 92</value>
   </data>
   <data name="btnHP.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -289,10 +400,13 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnNAT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 109</value>
+    <value>0, 134</value>
+  </data>
+  <data name="btnNAT.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnNAT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 75</value>
+    <value>293, 92</value>
   </data>
   <data name="btnNAT.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -315,86 +429,80 @@
   <data name="&gt;&gt;btnNAT.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="labelNazevApp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+  <data name="&gt;&gt;lblAppName.Name" xml:space="preserve">
+    <value>lblAppName</value>
   </data>
-  <data name="labelNazevApp.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="labelNazevApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
-  </data>
-  <data name="labelNazevApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 41</value>
-  </data>
-  <data name="labelNazevApp.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelNazevApp.Text" xml:space="preserve">
-    <value>Aplikace pro podporu vyuky NAT a NAT-T</value>
-  </data>
-  <data name="labelNazevApp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;labelNazevApp.Name" xml:space="preserve">
-    <value>labelNazevApp</value>
-  </data>
-  <data name="&gt;&gt;labelNazevApp.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblAppName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelNazevApp.Parent" xml:space="preserve">
-    <value>panelLogo</value>
+  <data name="&gt;&gt;lblAppName.Parent" xml:space="preserve">
+    <value>panelTopLeftCorner</value>
   </data>
-  <data name="&gt;&gt;labelNazevApp.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblAppName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panelLogo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="panelTopLeftCorner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="panelLogo.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panelTopLeftCorner.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panelLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 109</value>
+  <data name="panelTopLeftCorner.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="panelLogo.TabIndex" type="System.Int32, mscorlib">
+  <data name="panelTopLeftCorner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 134</value>
+  </data>
+  <data name="panelTopLeftCorner.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;panelLogo.Name" xml:space="preserve">
-    <value>panelLogo</value>
+  <data name="&gt;&gt;panelTopLeftCorner.Name" xml:space="preserve">
+    <value>panelTopLeftCorner</value>
   </data>
-  <data name="&gt;&gt;panelLogo.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelTopLeftCorner.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelLogo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelTopLeftCorner.Parent" xml:space="preserve">
     <value>panelMenu</value>
   </data>
-  <data name="&gt;&gt;panelLogo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelTopLeftCorner.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+  <data name="lblAppName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="panelMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
+  <data name="lblAppName.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
-  <data name="panelMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 652</value>
+  <data name="lblAppName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 41</value>
   </data>
-  <data name="panelMenu.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblAppName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblAppName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 50</value>
+  </data>
+  <data name="lblAppName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;panelMenu.Name" xml:space="preserve">
-    <value>panelMenu</value>
+  <data name="lblAppName.Text" xml:space="preserve">
+    <value>Aplikace pro podporu vyuky NAT a NAT-T</value>
   </data>
-  <data name="&gt;&gt;panelMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblAppName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;panelMenu.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;lblAppName.Name" xml:space="preserve">
+    <value>lblAppName</value>
   </data>
-  <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lblAppName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAppName.Parent" xml:space="preserve">
+    <value>panelTopLeftCorner</value>
+  </data>
+  <data name="&gt;&gt;lblAppName.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnCloseChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -405,8 +513,11 @@
   <data name="btnCloseChildForm.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="btnCloseChildForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="btnCloseChildForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 109</value>
+    <value>151, 134</value>
   </data>
   <data name="btnCloseChildForm.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -436,10 +547,13 @@
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <data name="lblNadpis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 42</value>
+    <value>432, 52</value>
+  </data>
+  <data name="lblNadpis.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblNadpis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 25</value>
+    <value>276, 31</value>
   </data>
   <data name="lblNadpis.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -463,10 +577,13 @@
     <value>Top</value>
   </data>
   <data name="panelTitleBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 1</value>
+    <value>294, 1</value>
+  </data>
+  <data name="panelTitleBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="panelTitleBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 109</value>
+    <value>1206, 134</value>
   </data>
   <data name="panelTitleBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -483,142 +600,193 @@
   <data name="&gt;&gt;panelTitleBar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblTextUvod.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+  <data name="&gt;&gt;lblIntroText.Name" xml:space="preserve">
+    <value>lblIntroText</value>
   </data>
-  <data name="lblTextUvod.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblIntroText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblTextUvod.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+  <data name="&gt;&gt;lblIntroText.Parent" xml:space="preserve">
+    <value>panelChildForm</value>
   </data>
-  <data name="lblTextUvod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 52</value>
+  <data name="&gt;&gt;lblIntroText.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="lblTextUvod.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 0</value>
+  <data name="&gt;&gt;lblAuthor.Name" xml:space="preserve">
+    <value>lblAuthor</value>
   </data>
-  <data name="lblTextUvod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 80</value>
+  <data name="&gt;&gt;lblAuthor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblTextUvod.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;lblAuthor.Parent" xml:space="preserve">
+    <value>panelChildForm</value>
+  </data>
+  <data name="&gt;&gt;lblAuthor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSchoolLogo.Name" xml:space="preserve">
+    <value>pictureBoxSchoolLogo</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSchoolLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSchoolLogo.Parent" xml:space="preserve">
+    <value>panelChildForm</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSchoolLogo.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblTextUvod.Text" xml:space="preserve">
+  <data name="panelChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelChildForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 135</value>
+  </data>
+  <data name="panelChildForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="panelChildForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1206, 669</value>
+  </data>
+  <data name="panelChildForm.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelChildForm.Name" xml:space="preserve">
+    <value>panelChildForm</value>
+  </data>
+  <data name="&gt;&gt;panelChildForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelChildForm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelChildForm.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblIntroText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblIntroText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblIntroText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="lblIntroText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>452, 64</value>
+  </data>
+  <data name="lblIntroText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblIntroText.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>533, 0</value>
+  </data>
+  <data name="lblIntroText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>498, 100</value>
+  </data>
+  <data name="lblIntroText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblIntroText.Text" xml:space="preserve">
     <value>Aplikace pro podporu vyuky NAT a NAT Traversal. 
 
 Aplikace slouží pouze k demonstraci jednotlivých metod NAT Traversal</value>
   </data>
-  <data name="&gt;&gt;lblTextUvod.Name" xml:space="preserve">
-    <value>lblTextUvod</value>
+  <data name="&gt;&gt;lblIntroText.Name" xml:space="preserve">
+    <value>lblIntroText</value>
   </data>
-  <data name="&gt;&gt;lblTextUvod.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblIntroText.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblTextUvod.Parent" xml:space="preserve">
-    <value>panelObrazovka</value>
+  <data name="&gt;&gt;lblIntroText.Parent" xml:space="preserve">
+    <value>panelChildForm</value>
   </data>
-  <data name="&gt;&gt;lblTextUvod.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblIntroText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblAutor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lblAuthor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="lblAutor.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblAuthor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblAutor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 498</value>
+  <data name="lblAuthor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>998, 614</value>
   </data>
-  <data name="lblAutor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+  <data name="lblAuthor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="lblAutor.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblAuthor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="lblAuthor.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblAutor.Text" xml:space="preserve">
+  <data name="lblAuthor.Text" xml:space="preserve">
     <value>Autor: Jakub Mazur</value>
   </data>
-  <data name="&gt;&gt;lblAutor.Name" xml:space="preserve">
-    <value>lblAutor</value>
+  <data name="&gt;&gt;lblAuthor.Name" xml:space="preserve">
+    <value>lblAuthor</value>
   </data>
-  <data name="&gt;&gt;lblAutor.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblAuthor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAutor.Parent" xml:space="preserve">
-    <value>panelObrazovka</value>
+  <data name="&gt;&gt;lblAuthor.Parent" xml:space="preserve">
+    <value>panelChildForm</value>
   </data>
-  <data name="&gt;&gt;lblAutor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblAuthor.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="pictureBoxSchoolLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 6</value>
+  <data name="pictureBoxSchoolLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 7</value>
   </data>
-  <data name="pictureBox1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>180, 180</value>
+  <data name="pictureBoxSchoolLogo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 180</value>
+  <data name="pictureBoxSchoolLogo.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>240, 222</value>
   </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="pictureBoxSchoolLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 222</value>
+  </data>
+  <data name="pictureBoxSchoolLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="pictureBoxSchoolLogo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
+  <data name="&gt;&gt;pictureBoxSchoolLogo.Name" xml:space="preserve">
+    <value>pictureBoxSchoolLogo</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;pictureBoxSchoolLogo.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panelObrazovka</value>
+  <data name="&gt;&gt;pictureBoxSchoolLogo.Parent" xml:space="preserve">
+    <value>panelChildForm</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pictureBoxSchoolLogo.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="panelObrazovka.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelObrazovka.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 110</value>
-  </data>
-  <data name="panelObrazovka.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 543</value>
-  </data>
-  <data name="panelObrazovka.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelObrazovka.Name" xml:space="preserve">
-    <value>panelObrazovka</value>
-  </data>
-  <data name="&gt;&gt;panelObrazovka.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelObrazovka.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelObrazovka.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>120, 120</value>
   </data>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1126, 654</value>
+    <value>1501, 805</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>900, 500</value>
+    <value>1194, 605</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -627,7 +795,7 @@ Aplikace slouží pouze k demonstraci jednotlivých metod NAT Traversal</value>
     <value>NAT, NAT-T</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormHlaniMenu</value>
+    <value>FormMainMenu</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

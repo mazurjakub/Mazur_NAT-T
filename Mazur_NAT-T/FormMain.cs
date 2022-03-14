@@ -12,12 +12,12 @@ using Open.Nat;
 
 namespace Mazur_NAT_T
 {
-    public partial class FormHlaniMenu : Form
+    public partial class FormMainMenu : Form
     {
         private Button currentButton;
         private Form activeForm;
 
-        public FormHlaniMenu()
+        public FormMainMenu()
         {
             InitializeComponent();
             btnCloseChildForm.Visible = false;
@@ -27,14 +27,10 @@ namespace Mazur_NAT_T
         //Metody
        
 
-        /* Metoda na zvýraznění tlačítka, které bylo zakliknuto
-         *
-         *1) Změní se barva pozadí tlačítka
-         *2) Změní se barva fontu tlačítka
-         *3) Změní se velikost fontu
-         *
-         */
-
+        
+        /// <summary>
+        /// Enlarges size of font of clicked button
+        /// </summary>
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -51,15 +47,15 @@ namespace Mazur_NAT_T
                 }
             }
         }
-
+        /// <summary>
+        /// Changes size of font back to normal
+        /// </summary>
         private void DisableButton()
         {
             foreach (Control previousBtn in panelMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(0, 111, 173);
-                    previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
@@ -74,15 +70,21 @@ namespace Mazur_NAT_T
         */
         private void OpenChildForm(Form childForm, object btnSender)
         {
+            // Close activated child form
             if (activeForm != null)     
                 activeForm.Close();
+
             ActivateButton(btnSender);
+
+            // Activate child form
             activeForm = childForm;
+
+            // Change parameters to fit in main form
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panelObrazovka.Controls.Add(childForm);
-            this.panelObrazovka.Tag = childForm;
+            this.panelChildForm.Controls.Add(childForm);
+            this.panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             lblNadpis.Text = childForm.Text;
@@ -118,7 +120,7 @@ namespace Mazur_NAT_T
 
         private void btnText_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormTexty(), sender);
+            OpenChildForm(new Forms.FormTextAndAnimation(), sender);
         }
 
         private void panelObrazovka_Paint(object sender, PaintEventArgs e)

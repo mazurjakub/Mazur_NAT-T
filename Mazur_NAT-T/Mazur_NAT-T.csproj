@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -61,7 +62,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -83,11 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHolePunching.cs">
       <SubType>Form</SubType>
@@ -107,19 +108,19 @@
     <Compile Include="Forms\FormPortMapping.Designer.cs">
       <DependentUpon>FormPortMapping.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormTexty.cs">
+    <Compile Include="Forms\FormTextAndAnimation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormTexty.Designer.cs">
-      <DependentUpon>FormTexty.cs</DependentUpon>
+    <Compile Include="Forms\FormTextAndAnimation.Designer.cs">
+      <DependentUpon>FormTextAndAnimation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.cs.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.cs.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHolePunching.resx">
       <DependentUpon>FormHolePunching.cs</DependentUpon>
@@ -130,8 +131,8 @@
     <EmbeddedResource Include="Forms\FormPortMapping.resx">
       <DependentUpon>FormPortMapping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormTexty.resx">
-      <DependentUpon>FormTexty.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormTextAndAnimation.resx">
+      <DependentUpon>FormTextAndAnimation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mazur_NAT_T.Forms
 {
-    public partial class FormTexty : Form
+    public partial class FormTextAndAnimation : Form
     {
-        public FormTexty()
+        public FormTextAndAnimation()
         {
             InitializeComponent();
         }

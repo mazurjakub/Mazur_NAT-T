@@ -1,7 +1,7 @@
 ﻿
 namespace Mazur_NAT_T
 {
-    partial class FormHlaniMenu
+    partial class FormMainMenu
     {
         /// <summary>
         /// Vyžaduje se proměnná návrháře.
@@ -29,27 +29,27 @@ namespace Mazur_NAT_T
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHlaniMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnText = new System.Windows.Forms.Button();
             this.btnPM = new System.Windows.Forms.Button();
             this.btnHP = new System.Windows.Forms.Button();
             this.btnNAT = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.labelNazevApp = new System.Windows.Forms.Label();
+            this.panelTopLeftCorner = new System.Windows.Forms.Panel();
+            this.lblAppName = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblNadpis = new System.Windows.Forms.Label();
-            this.panelObrazovka = new System.Windows.Forms.Panel();
-            this.lblTextUvod = new System.Windows.Forms.Label();
-            this.lblAutor = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.lblIntroText = new System.Windows.Forms.Label();
+            this.lblAuthor = new System.Windows.Forms.Label();
+            this.pictureBoxSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
+            this.panelTopLeftCorner.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
-            this.panelObrazovka.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSchoolLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -60,7 +60,7 @@ namespace Mazur_NAT_T
             this.panelMenu.Controls.Add(this.btnPM);
             this.panelMenu.Controls.Add(this.btnHP);
             this.panelMenu.Controls.Add(this.btnNAT);
-            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Controls.Add(this.panelTopLeftCorner);
             resources.ApplyResources(this.panelMenu, "panelMenu");
             this.panelMenu.Name = "panelMenu";
             // 
@@ -110,17 +110,17 @@ namespace Mazur_NAT_T
             this.btnNAT.UseVisualStyleBackColor = true;
             this.btnNAT.Click += new System.EventHandler(this.btnNAT_Click);
             // 
-            // panelLogo
+            // panelTopLeftCorner
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.White;
-            this.panelLogo.Controls.Add(this.labelNazevApp);
-            resources.ApplyResources(this.panelLogo, "panelLogo");
-            this.panelLogo.Name = "panelLogo";
+            this.panelTopLeftCorner.BackColor = System.Drawing.Color.White;
+            this.panelTopLeftCorner.Controls.Add(this.lblAppName);
+            resources.ApplyResources(this.panelTopLeftCorner, "panelTopLeftCorner");
+            this.panelTopLeftCorner.Name = "panelTopLeftCorner";
             // 
-            // labelNazevApp
+            // lblAppName
             // 
-            resources.ApplyResources(this.labelNazevApp, "labelNazevApp");
-            this.labelNazevApp.Name = "labelNazevApp";
+            resources.ApplyResources(this.lblAppName, "lblAppName");
+            this.lblAppName.Name = "lblAppName";
             // 
             // panelTitleBar
             // 
@@ -146,49 +146,49 @@ namespace Mazur_NAT_T
             resources.ApplyResources(this.lblNadpis, "lblNadpis");
             this.lblNadpis.Name = "lblNadpis";
             // 
-            // panelObrazovka
+            // panelChildForm
             // 
-            this.panelObrazovka.Controls.Add(this.lblTextUvod);
-            this.panelObrazovka.Controls.Add(this.lblAutor);
-            this.panelObrazovka.Controls.Add(this.pictureBox1);
-            resources.ApplyResources(this.panelObrazovka, "panelObrazovka");
-            this.panelObrazovka.Name = "panelObrazovka";
-            this.panelObrazovka.Paint += new System.Windows.Forms.PaintEventHandler(this.panelObrazovka_Paint);
+            this.panelChildForm.Controls.Add(this.lblIntroText);
+            this.panelChildForm.Controls.Add(this.lblAuthor);
+            this.panelChildForm.Controls.Add(this.pictureBoxSchoolLogo);
+            resources.ApplyResources(this.panelChildForm, "panelChildForm");
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelObrazovka_Paint);
             // 
-            // lblTextUvod
+            // lblIntroText
             // 
-            resources.ApplyResources(this.lblTextUvod, "lblTextUvod");
-            this.lblTextUvod.Name = "lblTextUvod";
+            resources.ApplyResources(this.lblIntroText, "lblIntroText");
+            this.lblIntroText.Name = "lblIntroText";
             // 
-            // lblAutor
+            // lblAuthor
             // 
-            resources.ApplyResources(this.lblAutor, "lblAutor");
-            this.lblAutor.Name = "lblAutor";
+            resources.ApplyResources(this.lblAuthor, "lblAuthor");
+            this.lblAuthor.Name = "lblAuthor";
             // 
-            // pictureBox1
+            // pictureBoxSchoolLogo
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::Mazur_NAT_T.Properties.Resources.UpolLOgo;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.pictureBoxSchoolLogo, "pictureBoxSchoolLogo");
+            this.pictureBoxSchoolLogo.Image = global::Mazur_NAT_T.Properties.Resources.UpolLOgo;
+            this.pictureBoxSchoolLogo.Name = "pictureBoxSchoolLogo";
+            this.pictureBoxSchoolLogo.TabStop = false;
             // 
-            // FormHlaniMenu
+            // FormMainMenu
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.panelObrazovka);
+            this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Name = "FormHlaniMenu";
+            this.Name = "FormMainMenu";
             this.ShowIcon = false;
             this.panelMenu.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
+            this.panelTopLeftCorner.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            this.panelObrazovka.ResumeLayout(false);
-            this.panelObrazovka.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelChildForm.ResumeLayout(false);
+            this.panelChildForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSchoolLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,15 +201,15 @@ namespace Mazur_NAT_T
         private System.Windows.Forms.Button btnPM;
         private System.Windows.Forms.Button btnHP;
         private System.Windows.Forms.Button btnNAT;
-        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Panel panelTopLeftCorner;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblNadpis;
-        private System.Windows.Forms.Label labelNazevApp;
-        private System.Windows.Forms.Panel panelObrazovka;
+        private System.Windows.Forms.Label lblAppName;
+        private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Button btnCloseChildForm;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblAutor;
-        private System.Windows.Forms.Label lblTextUvod;
+        private System.Windows.Forms.PictureBox pictureBoxSchoolLogo;
+        private System.Windows.Forms.Label lblAuthor;
+        private System.Windows.Forms.Label lblIntroText;
     }
 }
 
