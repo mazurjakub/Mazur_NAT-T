@@ -29,29 +29,60 @@ namespace Mazur_NAT_T.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelHP = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnConnect = new System.Windows.Forms.Button();
-            this.lblOutput = new System.Windows.Forms.Label();
-            this.txtBoxKey = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.isClientConnected = new System.Windows.Forms.Timer(this.components);
+            this.btnServer = new System.Windows.Forms.Button();
+            this.btnKlient = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelHP.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHP
             // 
-            this.panelHP.Controls.Add(this.label1);
-            this.panelHP.Controls.Add(this.txtBoxKey);
-            this.panelHP.Controls.Add(this.lblOutput);
             this.panelHP.Controls.Add(this.label2);
-            this.panelHP.Controls.Add(this.btnConnect);
+            this.panelHP.Controls.Add(this.label1);
+            this.panelHP.Controls.Add(this.btnServer);
+            this.panelHP.Controls.Add(this.btnKlient);
             this.panelHP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHP.Location = new System.Drawing.Point(0, 0);
             this.panelHP.Name = "panelHP";
-            this.panelHP.Size = new System.Drawing.Size(888, 504);
+            this.panelHP.Size = new System.Drawing.Size(800, 450);
             this.panelHP.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(63, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 18);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Hole punching je metoda.....";
+            // 
+            // btnServer
+            // 
+            this.btnServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnServer.Location = new System.Drawing.Point(616, 343);
+            this.btnServer.Name = "btnServer";
+            this.btnServer.Size = new System.Drawing.Size(140, 61);
+            this.btnServer.TabIndex = 2;
+            this.btnServer.Text = "Vytvořit server";
+            this.btnServer.UseVisualStyleBackColor = true;
+            // 
+            // btnKlient
+            // 
+            this.btnKlient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKlient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKlient.Location = new System.Drawing.Point(66, 343);
+            this.btnKlient.Name = "btnKlient";
+            this.btnKlient.Size = new System.Drawing.Size(140, 61);
+            this.btnKlient.TabIndex = 1;
+            this.btnKlient.Text = "Vytvořit klienta";
+            this.btnKlient.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -60,68 +91,19 @@ namespace Mazur_NAT_T.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(127, 29);
+            this.label2.Location = new System.Drawing.Point(78, 216);
             this.label2.MaximumSize = new System.Drawing.Size(700, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(644, 36);
+            this.label2.Size = new System.Drawing.Size(605, 36);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Tato demonstrace umožňuje navázat spojení mezi dvěma klienty pomocí metody Hole P" +
-    "unching.\r\nZadejte u obou klientů stejný klíč, aby mohlo vzniknou peer-to-peer sp" +
-    "ojení.";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
-            this.btnConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(669, 431);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(140, 61);
-            this.btnConnect.TabIndex = 1;
-            this.btnConnect.Text = "Odeslat zprávu serveru";
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
-            // lblOutput
-            // 
-            this.lblOutput.AutoSize = true;
-            this.lblOutput.BackColor = System.Drawing.Color.White;
-            this.lblOutput.Location = new System.Drawing.Point(56, 116);
-            this.lblOutput.MaximumSize = new System.Drawing.Size(450, 300);
-            this.lblOutput.MinimumSize = new System.Drawing.Size(450, 300);
-            this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(450, 300);
-            this.lblOutput.TabIndex = 5;
-            this.lblOutput.Text = "Okno pro komunikaci se serverem a klientem";
-            // 
-            // txtBoxKey
-            // 
-            this.txtBoxKey.Location = new System.Drawing.Point(709, 386);
-            this.txtBoxKey.Name = "txtBoxKey";
-            this.txtBoxKey.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxKey.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(674, 389);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Klíč:";
-            // 
-            // isClientConnected
-            // 
-            this.isClientConnected.Interval = 1000;
-            this.isClientConnected.Tick += new System.EventHandler(this.isClientConnected_Tick);
+            this.label2.Text = "V této demonstraci si vytvořte server a 2 klienty. \r\nZadejte do obou klientů stej" +
+    "ný unikátní klíč a server mezi nimy vytvoří peer-to-peer připojení.";
             // 
             // FormHolePunching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 504);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelHP);
             this.Name = "FormHolePunching";
             this.Text = "Hole Punching";
@@ -135,11 +117,9 @@ namespace Mazur_NAT_T.Forms
         #endregion
 
         private System.Windows.Forms.Panel panelHP;
-        private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBoxKey;
-        private System.Windows.Forms.Timer isClientConnected;
+        private System.Windows.Forms.Button btnServer;
+        private System.Windows.Forms.Button btnKlient;
+        private System.Windows.Forms.Label label2;
     }
 }

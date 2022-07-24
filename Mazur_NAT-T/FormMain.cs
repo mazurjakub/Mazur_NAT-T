@@ -9,20 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Open.Nat;
-using System.Diagnostics;
-using System.IO;
 
 namespace Mazur_NAT_T
 {
-    public partial class FormHlaniMenu : Form
+    public partial class FormMainMenu : Form
     {
         private Button currentButton;
         private Form activeForm;
-        public static bool alreadyLoaded = false;
-        public static bool isFirstMessage = true;
-        public static string lblHolep = "Okno pro komunikaci se serverem a klientem";
 
-        public FormHlaniMenu()
+        public FormMainMenu()
         {
             InitializeComponent();
             btnCloseChildForm.Visible = false;
@@ -32,14 +27,10 @@ namespace Mazur_NAT_T
         //Metody
        
 
-        /* Metoda na zvýraznění tlačítka, které bylo zakliknuto
-         *
-         *1) Změní se barva pozadí tlačítka
-         *2) Změní se barva fontu tlačítka
-         *3) Změní se velikost fontu
-         *
-         */
-
+        
+        /// <summary>
+        /// Enlarges size of font of clicked button
+        /// </summary>
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -51,22 +42,20 @@ namespace Mazur_NAT_T
                     currentButton = (Button)btnSender;
 
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-                    currentButton.BackColor = Color.FromArgb(0,134,212);
                     
                     btnCloseChildForm.Visible = true;
                 }
             }
         }
-
+        /// <summary>
+        /// Changes size of font back to normal
+        /// </summary>
         private void DisableButton()
         {
             foreach (Control previousBtn in panelMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(0, 111, 173);
-                    previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
@@ -81,15 +70,21 @@ namespace Mazur_NAT_T
         */
         private void OpenChildForm(Form childForm, object btnSender)
         {
+            // Close activated child form
             if (activeForm != null)     
-                activeForm.Hide();
+                activeForm.Close();
+
             ActivateButton(btnSender);
+
+            // Activate child form
             activeForm = childForm;
+
+            // Change parameters to fit in main form
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panelObrazovka.Controls.Add(childForm);
-            this.panelObrazovka.Tag = childForm;
+            this.panelChildForm.Controls.Add(childForm);
+            this.panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             lblNadpis.Text = childForm.Text;
@@ -125,15 +120,7 @@ namespace Mazur_NAT_T
 
         private void btnText_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string path = Path.Combine(Directory.GetCurrentDirectory(), "bp_Mazur.pdf");
-                Process.Start(path);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Chyba při otevírání PDF souboru." + ex.Message + Path.Combine(Directory.GetCurrentDirectory(), "bp_Mazur.pdf"));
-            }
+            OpenChildForm(new Forms.FormTextAndAnimation(), sender);
         }
 
         private void panelObrazovka_Paint(object sender, PaintEventArgs e)
@@ -146,7 +133,7 @@ namespace Mazur_NAT_T
         {
             if (activeForm != null)
             {
-                activeForm.Hide();
+                activeForm.Close();
                 DisableButton();
                 lblNadpis.Text = "Domovská obrazovka";
                 btnCloseChildForm.Visible = false;
@@ -155,9 +142,6 @@ namespace Mazur_NAT_T
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
 
-        }
     }
 }

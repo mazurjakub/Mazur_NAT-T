@@ -8,15 +8,18 @@ namespace Mazur_NAT_T
 {
     static class Program
     {
-        /// <summary>
-        /// Hlavní vstupní bod aplikace.
-        /// </summary>
         [STAThread]
         static void Main()
         {
+            // Setting scale to DPI, so it wouldn't be blurry on high-DPI monitors
+            if (Environment.OSVersion.Version.Major >= 6)
+                SetProcessDPIAware();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormHlaniMenu());
+            Application.Run(new FormMainMenu());
         }
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }
