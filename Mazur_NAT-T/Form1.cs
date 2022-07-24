@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Open.Nat;
 using System.Diagnostics;
+using System.IO;
 
 namespace Mazur_NAT_T
 {
@@ -17,6 +18,9 @@ namespace Mazur_NAT_T
     {
         private Button currentButton;
         private Form activeForm;
+        public static bool alreadyLoaded = false;
+        public static bool isFirstMessage = true;
+        public static string lblHolep = "Okno pro komunikaci se serverem a klientem";
 
         public FormHlaniMenu()
         {
@@ -123,11 +127,12 @@ namespace Mazur_NAT_T
         {
             try
             {
-                Process.Start("bp_Mazur.pdf");
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "bp_Mazur.pdf");
+                Process.Start(path);
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Chyba při otevírání PDF souboru.");
+                MessageBox.Show("Chyba při otevírání PDF souboru." + ex.Message + Path.Combine(Directory.GetCurrentDirectory(), "bp_Mazur.pdf"));
             }
         }
 

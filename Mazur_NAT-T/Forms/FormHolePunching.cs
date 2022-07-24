@@ -21,6 +21,7 @@ namespace Mazur_NAT_T.Forms
         public static bool hasSecondClient = false;
         public static string secondClientIP;
         public static string secondClientPort;
+        
         public FormHolePunching()
         {
             InitializeComponent();
@@ -30,49 +31,38 @@ namespace Mazur_NAT_T.Forms
         {
             try
             {
-                //Setting up UDP socket and connecting to server endpoint
-                server.AllowNatTraversal(true);
-                server.ExclusiveAddressUse = false;
-                server.Client.SetIPProtectionLevel(IPProtectionLevel.Unrestricted);
-                server.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-                server.Connect(ServerEndPoint);
-
+                lblOutput.Text = FormHlaniMenu.lblHolep;
+                lblOutput.Refresh();
                 //Start recieving data from server
-                Thread ThreadListen = new Thread(() => ReceiveDataFromEP(ServerEndPoint, server));
-                ThreadListen.IsBackground = true;
+                Thread ThreadListen = new Thread(() => ReceiveDataFromEP(ServerEndPoint, server))
+                {
+                    IsBackground = true
+                };
                 ThreadListen.Start();
+                if (!FormHlaniMenu.alreadyLoaded)
+                {
+                    FormHlaniMenu.alreadyLoaded = true;
+                    //Setting up UDP socket and connecting to server endpoint
+                    server.AllowNatTraversal(true);
+                    server.ExclusiveAddressUse = false;
+                    server.Client.SetIPProtectionLevel(IPProtectionLevel.Unrestricted);
+                    server.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+                    server.Connect(ServerEndPoint);
+                }
             }
-            catch
+            catch(Exception exp)
             {
-                WriteToLabel("Chyba při připojení k serveru.");
+                WriteToLabel("Chyba při připojení k serveru." + exp.Message);
             }
         }
 
 
 
-        private async Task ConnectToServer()
+        private async Task ConnectToClient()
         {
             try
             {
-                string key = txtBoxKey.Text;
-                txtBoxKey.Text = "";
-                SendDataToServer(key, server);
-
-                WriteToLabel("Pro vymazání záznamu ze serveru, zadejte klíč '0'.\n");
-
-                await Task.Run(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(1000);
-                        if (hasSecondClient) break;
-                    }
-                }
-                );
-                
-
-                Thread.Sleep(100);
-                IPEndPoint clientEndPoint = new IPEndPoint(IPAddress.Parse(secondClientIP), 53);
+                IPEndPoint clientEndPoint = new IPEndPoint(IPAddress.Parse(secondClientIP), int.Parse(secondClientPort));
 
                 connectedClient.AllowNatTraversal(true);
                 connectedClient.Client.SetIPProtectionLevel(IPProtectionLevel.Unrestricted);
@@ -83,28 +73,12 @@ namespace Mazur_NAT_T.Forms
                 Thread thread = new Thread(() => ReceiveDataFromEP(clientEndPoint, connectedClient));
                 thread.Start();
 
-                await Task.Run(() =>
-                {
-                    while (true)
-                    {
-                        try
-                        {
+                SendDataToServer("Hello", connectedClient);
 
-                            SendDataToServer("Hello", connectedClient);
-                            Thread.Sleep(1000);
-
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                    }
-                });
-                
             }
             catch(Exception e)
             {
-                WriteToLabel("\nNepodařilo se pripojit: " + e.Message);
+                WriteToLabel("\nNepodařilo se připojit: " + e.Message);
                 return;
             }
 
@@ -138,8 +112,8 @@ namespace Mazur_NAT_T.Forms
                 string request = Encoding.UTF8.GetString(receivedData);
 
 
-                WriteToLabel("Prichozi zprava z IP: " + endPoint.Address.ToString() + " Port: " + endPoint.Port.ToString());
-                WriteToLabel("Obsah zpravy: " + request + "\n");
+                WriteToLabel("Příchozi zpráva z IP: " + endPoint.Address.ToString() + " Port: " + endPoint.Port.ToString());
+                WriteToLabel("Obsah zprávy: " + request + "\n");
                    
 
                 // If server sends IP address, initiate connection to that IP
@@ -147,13 +121,11 @@ namespace Mazur_NAT_T.Forms
                 {
                     secondClientIP = request;
                     hasSecondClient = true;
-                    receivedData = null;
-
                     receivedData = server.Receive(ref endPoint);
                     request = Encoding.UTF8.GetString(receivedData);
 
-                    WriteToLabel("Prichozi zprava z IP: " + endPoint.Address.ToString() + " Port: " + endPoint.Port.ToString());
-                    WriteToLabel("Obsah zpravy: " + request + "\n");
+                    WriteToLabel("Příchozí zpráva z IP: " + endPoint.Address.ToString() + " Port: " + endPoint.Port.ToString());
+                    WriteToLabel("Obsah zprávy: " + request + "\n");
 
                     secondClientPort = request;
                 }
@@ -180,8 +152,7 @@ namespace Mazur_NAT_T.Forms
 
             try
             {
-                IPAddress address;
-                retVal = IPAddress.TryParse(ipAddress, out address);
+                retVal = IPAddress.TryParse(ipAddress, out IPAddress address);
             }
             catch (Exception ex)
             {
@@ -201,6 +172,7 @@ namespace Mazur_NAT_T.Forms
             {
                 lblOutput.Text += "\n" + str;
                 lblOutput.Refresh();
+                FormHlaniMenu.lblHolep = lblOutput.Text;
             }
         }
 
@@ -214,13 +186,35 @@ namespace Mazur_NAT_T.Forms
             else if (txtBoxKey.Text == "0")
             {
                 SendDataToServer("0", server);
+                txtBoxKey.Text = "";
+                return;
             }
-            _ = ConnectToServer();
+            else if (FormHlaniMenu.isFirstMessage)
+            {
+                WriteToLabel("Pro vymazání záznamu ze serveru, zadejte klíč '0'.\n");
+                SendDataToServer(txtBoxKey.Text, server);
+                txtBoxKey.Text = "";
+                txtBoxKey.Refresh();
+            }
+            else
+            {
+                SendDataToServer(txtBoxKey.Text, server);
+                txtBoxKey.Text = "";
+                txtBoxKey.Refresh();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void isClientConnected_Tick(object sender, EventArgs e)
+        {
+            if (hasSecondClient)
+            {
+                _ = ConnectToClient();
+            }
         }
     }
 }
