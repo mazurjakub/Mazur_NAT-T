@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using Open.Nat;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Sockets;
+using System.Net;
 
 namespace Mazur_NAT_T
 {
@@ -17,16 +15,24 @@ namespace Mazur_NAT_T
     {
         private Button currentButton;
         private Form activeForm;
+        public static bool alreadyLoaded = false;
+        public static bool isFirstMessage = true;
+        public static string lblHolep = "Okno pro komunikaci se serverem a klientem";
+
+        public static IPEndPoint ServerEndPoint = new IPEndPoint(IPAddress.Parse("3.143.208.24"), 1700);
+        public static UdpClient server = new UdpClient();
+        public static UdpClient connectedClient = new UdpClient();
+        public static Socket socket = new Socket(AddressFamily.Unspecified, SocketType.Dgram, ProtocolType.Udp);
 
         public FormHlaniMenu()
         {
             InitializeComponent();
             btnCloseChildForm.Visible = false;
             this.Text = string.Empty;
-            
+
         }
         //Metody
-       
+
 
         /* Metoda na zvýraznění tlačítka, které bylo zakliknuto
          *
@@ -48,8 +54,8 @@ namespace Mazur_NAT_T
 
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-                    currentButton.BackColor = Color.FromArgb(0,134,212);
-                    
+                    currentButton.BackColor = Color.FromArgb(0, 134, 212);
+
                     btnCloseChildForm.Visible = true;
                 }
             }
@@ -77,8 +83,8 @@ namespace Mazur_NAT_T
         */
         private void OpenChildForm(Form childForm, object btnSender)
         {
-            if (activeForm != null)     
-                activeForm.Hide();
+            if (activeForm != null)
+                activeForm.Close();
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -123,11 +129,12 @@ namespace Mazur_NAT_T
         {
             try
             {
-                Process.Start("bp_Mazur.pdf");
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "bp_Mazur.pdf");
+                Process.Start(path);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Chyba při otevírání PDF souboru.");
+                MessageBox.Show("Chyba při otevírání PDF souboru." + ex.Message + Path.Combine(Directory.GetCurrentDirectory(), "bp_Mazur.pdf"));
             }
         }
 
@@ -141,12 +148,12 @@ namespace Mazur_NAT_T
         {
             if (activeForm != null)
             {
-                activeForm.Hide();
+                activeForm.Close();
                 DisableButton();
                 lblNadpis.Text = "Domovská obrazovka";
                 btnCloseChildForm.Visible = false;
                 currentButton = null;
-                
+
             }
         }
 

@@ -30,19 +30,19 @@ namespace Mazur_NAT_T.Forms
         private void InitializeComponent()
         {
             this.panelHP = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxKey = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.lblOutput = new System.Windows.Forms.Label();
-            this.txtBoxKey = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOutput = new System.Windows.Forms.TextBox();
             this.panelHP.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHP
             // 
+            this.panelHP.Controls.Add(this.lblOutput);
             this.panelHP.Controls.Add(this.label1);
             this.panelHP.Controls.Add(this.txtBoxKey);
-            this.panelHP.Controls.Add(this.lblOutput);
             this.panelHP.Controls.Add(this.label2);
             this.panelHP.Controls.Add(this.btnConnect);
             this.panelHP.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -50,6 +50,22 @@ namespace Mazur_NAT_T.Forms
             this.panelHP.Name = "panelHP";
             this.panelHP.Size = new System.Drawing.Size(888, 504);
             this.panelHP.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(666, 388);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Klíč:";
+            // 
+            // txtBoxKey
+            // 
+            this.txtBoxKey.Location = new System.Drawing.Point(701, 385);
+            this.txtBoxKey.Name = "txtBoxKey";
+            this.txtBoxKey.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxKey.TabIndex = 6;
             // 
             // label2
             // 
@@ -84,31 +100,15 @@ namespace Mazur_NAT_T.Forms
             // 
             // lblOutput
             // 
-            this.lblOutput.AutoSize = true;
-            this.lblOutput.BackColor = System.Drawing.Color.White;
-            this.lblOutput.Location = new System.Drawing.Point(56, 116);
+            this.lblOutput.Location = new System.Drawing.Point(42, 105);
             this.lblOutput.MaximumSize = new System.Drawing.Size(450, 300);
             this.lblOutput.MinimumSize = new System.Drawing.Size(450, 300);
+            this.lblOutput.Multiline = true;
             this.lblOutput.Name = "lblOutput";
+            this.lblOutput.ReadOnly = true;
+            this.lblOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.lblOutput.Size = new System.Drawing.Size(450, 300);
-            this.lblOutput.TabIndex = 5;
-            this.lblOutput.Text = "Okno pro komunikaci se serverem a klientem";
-            // 
-            // txtBoxKey
-            // 
-            this.txtBoxKey.Location = new System.Drawing.Point(701, 385);
-            this.txtBoxKey.Name = "txtBoxKey";
-            this.txtBoxKey.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxKey.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(666, 388);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Klíč:";
+            this.lblOutput.TabIndex = 8;
             // 
             // FormHolePunching
             // 
@@ -130,8 +130,8 @@ namespace Mazur_NAT_T.Forms
         private System.Windows.Forms.Panel panelHP;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBoxKey;
+        private System.Windows.Forms.TextBox lblOutput;
     }
 }
