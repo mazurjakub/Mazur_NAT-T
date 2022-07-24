@@ -39,12 +39,13 @@ namespace Mazur_NAT_T
             this.panelLogo = new System.Windows.Forms.Panel();
             this.labelNazevApp = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblNadpis = new System.Windows.Forms.Label();
             this.panelObrazovka = new System.Windows.Forms.Panel();
             this.lblTextUvod = new System.Windows.Forms.Label();
             this.lblAutor = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCloseChildForm = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -132,15 +133,6 @@ namespace Mazur_NAT_T
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
             // 
-            // btnCloseChildForm
-            // 
-            resources.ApplyResources(this.btnCloseChildForm, "btnCloseChildForm");
-            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseChildForm.Image = global::Mazur_NAT_T.Properties.Resources.cross11;
-            this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.UseVisualStyleBackColor = true;
-            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
-            // 
             // lblNadpis
             // 
             resources.ApplyResources(this.lblNadpis, "lblNadpis");
@@ -171,6 +163,19 @@ namespace Mazur_NAT_T
             this.pictureBox1.Image = global::Mazur_NAT_T.Properties.Resources.UpolLOgo;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            // 
+            // btnCloseChildForm
+            // 
+            resources.ApplyResources(this.btnCloseChildForm, "btnCloseChildForm");
+            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseChildForm.Image = global::Mazur_NAT_T.Properties.Resources.cross11;
+            this.btnCloseChildForm.Name = "btnCloseChildForm";
+            this.btnCloseChildForm.UseVisualStyleBackColor = true;
+            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // FormHlaniMenu
             // 
@@ -210,6 +215,7 @@ namespace Mazur_NAT_T
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblAutor;
         private System.Windows.Forms.Label lblTextUvod;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

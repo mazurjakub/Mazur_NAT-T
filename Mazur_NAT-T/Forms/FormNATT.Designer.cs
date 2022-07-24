@@ -40,21 +40,24 @@ namespace Mazur_NAT_T.Forms
             // 
             // panelNATT
             // 
+            this.panelNATT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNATT.Controls.Add(this.label1);
             this.panelNATT.Controls.Add(this.lblNadpisNATT);
             this.panelNATT.Controls.Add(this.lblNadpisNAT);
             this.panelNATT.Controls.Add(this.lblTextNAT);
-            this.panelNATT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNATT.Location = new System.Drawing.Point(0, 0);
+            this.panelNATT.Location = new System.Drawing.Point(0, 1);
             this.panelNATT.Name = "panelNATT";
-            this.panelNATT.Size = new System.Drawing.Size(800, 450);
+            this.panelNATT.Size = new System.Drawing.Size(889, 504);
             this.panelNATT.TabIndex = 2;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(67, 242);
+            this.label1.Location = new System.Drawing.Point(114, 243);
             this.label1.MaximumSize = new System.Drawing.Size(650, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(642, 144);
@@ -63,9 +66,12 @@ namespace Mazur_NAT_T.Forms
             // 
             // lblNadpisNATT
             // 
+            this.lblNadpisNATT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNadpisNATT.AutoSize = true;
             this.lblNadpisNATT.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNadpisNATT.Location = new System.Drawing.Point(355, 167);
+            this.lblNadpisNATT.Location = new System.Drawing.Point(402, 168);
             this.lblNadpisNATT.Name = "lblNadpisNATT";
             this.lblNadpisNATT.Size = new System.Drawing.Size(91, 29);
             this.lblNadpisNATT.TabIndex = 4;
@@ -73,9 +79,12 @@ namespace Mazur_NAT_T.Forms
             // 
             // lblNadpisNAT
             // 
+            this.lblNadpisNAT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNadpisNAT.AutoSize = true;
             this.lblNadpisNAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNadpisNAT.Location = new System.Drawing.Point(370, 18);
+            this.lblNadpisNAT.Location = new System.Drawing.Point(417, 19);
             this.lblNadpisNAT.Name = "lblNadpisNAT";
             this.lblNadpisNAT.Size = new System.Drawing.Size(65, 29);
             this.lblNadpisNAT.TabIndex = 3;
@@ -84,9 +93,12 @@ namespace Mazur_NAT_T.Forms
             // 
             // lblTextNAT
             // 
+            this.lblTextNAT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTextNAT.AutoSize = true;
             this.lblTextNAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTextNAT.Location = new System.Drawing.Point(67, 84);
+            this.lblTextNAT.Location = new System.Drawing.Point(114, 85);
             this.lblTextNAT.MaximumSize = new System.Drawing.Size(650, 0);
             this.lblTextNAT.Name = "lblTextNAT";
             this.lblTextNAT.Size = new System.Drawing.Size(649, 54);
@@ -100,7 +112,7 @@ namespace Mazur_NAT_T.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(888, 504);
             this.Controls.Add(this.panelNATT);
             this.Name = "FormNATT";
             this.Text = "NAT, NAT-T";

@@ -29,26 +29,13 @@ namespace Mazur_NAT_T.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMapping = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnMapping
-            // 
-            this.btnMapping.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnMapping.Location = new System.Drawing.Point(616, 343);
-            this.btnMapping.Name = "btnMapping";
-            this.btnMapping.Size = new System.Drawing.Size(140, 61);
-            this.btnMapping.TabIndex = 6;
-            this.btnMapping.Text = "Odkaz na animace";
-            this.btnMapping.UseVisualStyleBackColor = true;
             // 
             // FormTexty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnMapping);
             this.Name = "FormTexty";
             this.Text = "Texty a animace";
             this.ResumeLayout(false);
@@ -56,7 +43,5 @@ namespace Mazur_NAT_T.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnMapping;
     }
 }

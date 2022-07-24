@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Open.Nat;
+using System.Diagnostics;
 
 namespace Mazur_NAT_T
 {
@@ -46,6 +47,8 @@ namespace Mazur_NAT_T
                     currentButton = (Button)btnSender;
 
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+                    currentButton.BackColor = Color.FromArgb(0,134,212);
                     
                     btnCloseChildForm.Visible = true;
                 }
@@ -75,7 +78,7 @@ namespace Mazur_NAT_T
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)     
-                activeForm.Close();
+                activeForm.Hide();
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -118,7 +121,14 @@ namespace Mazur_NAT_T
 
         private void btnText_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormTexty(), sender);
+            try
+            {
+                Process.Start("bp_Mazur.pdf");
+            }
+            catch
+            {
+                MessageBox.Show("Chyba při otevírání PDF souboru.");
+            }
         }
 
         private void panelObrazovka_Paint(object sender, PaintEventArgs e)
@@ -131,7 +141,7 @@ namespace Mazur_NAT_T
         {
             if (activeForm != null)
             {
-                activeForm.Close();
+                activeForm.Hide();
                 DisableButton();
                 lblNadpis.Text = "Domovská obrazovka";
                 btnCloseChildForm.Visible = false;
@@ -140,6 +150,9 @@ namespace Mazur_NAT_T
             }
         }
 
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
 
+        }
     }
 }

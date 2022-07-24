@@ -14,6 +14,12 @@ namespace Mazur_NAT_T.Forms
         public FormPortMapping()
         {
             InitializeComponent();
+            Load += new EventHandler(FormPortMapping_Load);
+        }
+
+        private void FormPortMapping_Load(object sender, System.EventArgs e)
+        {
+            _ = ListMappings();
         }
 
 
@@ -47,8 +53,7 @@ namespace Mazur_NAT_T.Forms
                 await device.CreatePortMapAsync(mapping);
 
                 // Display created mapping
-                lblMapOutput.Text = "Vytvořeno mapování: " + await device.GetExternalIPAsync() + ":" + extPort
-                        + " -> " + mapping.PrivateIP + ":" + intPort;
+                _ = ListMappings();
 
                 // Configure a TCP socket to listen on internal port
                 var endPoint = new IPEndPoint(IPAddress.Any, intPort);
@@ -84,6 +89,7 @@ namespace Mazur_NAT_T.Forms
         {
             try
             {
+                int addedMappings = 0;
                 // Discover mappings
                 var nat = new NatDiscoverer();
 
@@ -93,14 +99,18 @@ namespace Mazur_NAT_T.Forms
                 // Discover UPnP NAT device
                 var device = await nat.DiscoverDeviceAsync(PortMapper.Upnp, cts);
 
-                lblMappings.Text = "";
+                checkBoxMappings.Items.Clear();
 
                 // Write each mapping's information "mapping_name: NAT_device_IP:external_port -> host_machine_IP:internal_port"
                 foreach (var mapping in await device.GetAllMappingsAsync())
                 {
-                    lblMappings.Text += "  " + mapping.Description + ": " + await device.GetExternalIPAsync() + ":" + mapping.PublicPort + " -> "
+                    string item = mapping.Description + ": " + await device.GetExternalIPAsync() + ":" + mapping.PublicPort + " -> "
                         + mapping.PrivateIP + ":" + mapping.PrivatePort + "\n";
+
+                    checkBoxMappings.Items.Add(item, false);
+                    addedMappings++;
                 }
+                if(addedMappings == 0) checkBoxMappings.Items.Add("Nebyla nalezena žádná mapování", false);
             }
             // Catching if UPnP NAT device wasnt found
             catch (NatDeviceNotFoundException)
@@ -110,7 +120,7 @@ namespace Mazur_NAT_T.Forms
         }
 
         // Delete mapping using name of the mapping
-        private async Task DeleteMapping()
+        private async Task DeleteCheckedMappings()
         {
             try
             {
@@ -123,33 +133,45 @@ namespace Mazur_NAT_T.Forms
                 // Discover UPnP NAT device
                 var device = await nat.DiscoverDeviceAsync(PortMapper.Upnp, cts);
 
-                string mappingName = txtBoxDeleteMappingName.Text;
-                lblDeleteOutput.Text = "";
-
-                // Compare each mapping name with given name, if they match, delete the mapping
-                foreach (var mapping in await device.GetAllMappingsAsync())
+                //Find checked items
+                foreach(var item in checkBoxMappings.CheckedItems)
                 {
-                    if (mapping.Description.Contains(mappingName))
+                    int i = checkBoxMappings.Items.IndexOf(item);
+                    string mappingName = GetUntilOrEmpty(checkBoxMappings.Items[i].ToString());
+
+                    // Compare each mapping name with given name, if they match, delete the mapping
+                    foreach (var mapping in await device.GetAllMappingsAsync())
                     {
-                        lblDeleteOutput.Text = "Odstraňuji: " + mappingName;
-                        lblDeleteOutput.Refresh();
-                        await device.DeletePortMapAsync(mapping);
+                        if (mapping.Description.Equals(mappingName))
+                        {
+                            await device.DeletePortMapAsync(mapping);
+                        }
                     }
-                }
 
-                if (lblDeleteOutput.Text == "")
-                {
-                    lblDeleteOutput.Text = "Nenalezeno mapování s názvem: " + mappingName;
-                    lblDeleteOutput.Refresh();
                 }
-                await Task.Delay(2000);
-                lblDeleteOutput.Text = "";
+                _ = ListMappings();
             }
             // Catching if UPnP NAT device wasnt found
             catch (NatDeviceNotFoundException)
             {
                 MessageBox.Show("Nebylo nalezeno UPnP zařízení.");
             }
+        }
+
+        // From https://stackoverflow.com/questions/1857513/get-substring-everything-before-certain-char
+        public static string GetUntilOrEmpty(string text, string stopAt = ":")
+        {
+            if (!String.IsNullOrWhiteSpace(text))
+            {
+                int charLocation = text.IndexOf(stopAt, StringComparison.Ordinal);
+
+                if (charLocation > 0)
+                {
+                    return text.Substring(0, charLocation);
+                }
+            }
+
+            return String.Empty;
         }
 
         private void btnMapping_Click(object sender, EventArgs e)
@@ -160,12 +182,17 @@ namespace Mazur_NAT_T.Forms
 
         private void btnShowMappings_Click(object sender, EventArgs e)
         {
-            _ = ListMappings();
+            
         }
 
         private void btnDeleteMapping_Click(object sender, EventArgs e)
         {
-            _ = DeleteMapping();
+            _ = DeleteCheckedMappings();
+        }
+
+        private void checkBoxMappings_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
